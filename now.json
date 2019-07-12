@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "serverless-mongodb-demo",
+  "alias": "serverless-mongodb-demo.now.sh",
+  "builds": [{ "src": "index.js", "use": "@now/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "index.js" }]
+}
