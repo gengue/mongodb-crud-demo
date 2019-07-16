@@ -1,19 +1,14 @@
 const mongoose = require('mongoose');
 
-const FieldSchema = new mongoose.Schema({
-  type: String,
-  name: String,
-  label: String,
-  help_text: String,
-  default_value: mongoose.Schema.Types.Mixed,
-  choices: [mongoose.Schema.Types.Mixed],
-});
-
 const TemplateSchema = new mongoose.Schema({
-  name: String,
+  title: String,
+  type: String,
+  required: [String],
+  definitions: mongoose.Schema.Types.Mixed,
+  properties: mongoose.Schema.Types.Mixed,
+  dependencies: mongoose.Schema.Types.Mixed,
   created_by: Number,
   published: { type: Boolean, default: true },
-  fields: [FieldSchema],
 });
 
 const Template = mongoose.model('Template', TemplateSchema);
